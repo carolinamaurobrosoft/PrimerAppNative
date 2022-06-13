@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import {Text, View} from 'react-native';
+import sharedStyles from "../shared-styles";
 
-function RunInfo ({title, value}) {
+
+function RunInfo ({title, value}) {  
     return(
-        <View>
-            <Text> {title} </Text>
-            <Text> {value} </Text>
+        <View style={[sharedStyles.runInfoWrapper, {flex: 1, flexDirection: 'column-reverse'}]}>
+            <Text style={[sharedStyles.runInfoTitle]}> {title.toUpperCase()} </Text>
+            <Text style={[sharedStyles.runInfoValue]}> {value} </Text>
         </View>
     )
 }
